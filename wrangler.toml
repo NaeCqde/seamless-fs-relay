@@ -1,0 +1,15 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "seamless-fs-relay"
+main = "src/index.ts"
+compatibility_date = "2024-12-24"
+compatibility_flags = ["nodejs_compat"]
+
+[placement]
+mode = "smart"
+
+[[kv_namespaces]]
+binding = "KV"
+id = ""
+
+[vars]
+TOKEN = ""
