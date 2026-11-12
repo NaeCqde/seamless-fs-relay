@@ -15,6 +15,6 @@ id = ""
 # The address of every server and the SHA-256 of its token (`sfs token` prints both):
 #   SERVERS = '{"https://a.example.com": "<64 hex digits>", "https://b.example.com": "<64 hex digits>"}'
 # A hash is not a secret as long as the token is a long random one (`sfs token`).
-SERVERS = '{}'
+SERVERS = '{"https://nae.quest": "d2041ffd54b1ad8a628686737b93c46cdf7118ba52e2c96ada08a2bced033fee"}'
 # The public key of the relay (`sfs keygen`). The private key is a secret: `wrangler secret put RELAY_PRIVATE_KEY`.
-RELAY_PUBLIC_KEY = ""
+RELAY_PUBLIC_KEY = "5BakE9L9h8vOWfp_UvswHBOjxegIbwd_XLJq_gDe_uA"
