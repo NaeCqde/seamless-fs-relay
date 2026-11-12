@@ -12,4 +12,9 @@ binding = "KV"
 id = ""
 
 [vars]
-TOKEN = ""
+# The address of every server and the SHA-256 of its token (`sfs token` prints both):
+#   SERVERS = '{"https://a.example.com": "<64 hex digits>", "https://b.example.com": "<64 hex digits>"}'
+# A hash is not a secret as long as the token is a long random one (`sfs token`).
+SERVERS = '{}'
+# The public key of the relay (`sfs keygen`). The private key is a secret: `wrangler secret put RELAY_PRIVATE_KEY`.
+RELAY_PUBLIC_KEY = ""
