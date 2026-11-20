@@ -1,10 +1,10 @@
-# Changes
+# 変更履歴
 
-## Unreleased (breaking: update the relay and all `sfs` servers together)
+## 未リリース(互換性なし: リレーとすべての `sfs` サーバーを一緒に更新すること)
 
-- Each server has its own token; the relay keeps only its SHA-256 (`SERVERS`). A server can register only its own address; the relay sends only to the addresses in `SERVERS` (it used to call any address that a holder of the shared token wrote), without following redirects, with a time limit.
-- The relay signs what it sends to the servers (Ed25519, with the address of the server and the time in the signed text). The servers hold only the public key.
-- The files of a server are cleaned: only `parent`, `name` and `size`, sorted. A server can no longer put a link of its own into the pages of the others.
-- Fixes: `?first=false` counted as `first`; a bad body gave 500 (now 400/413); a wrong token gave 400 (now 401); `DELETE` did not remove the files of the server when the list of servers did not change; the whole payload was written to the log.
-- The pushes go out at the same time instead of one by one, and are done after the answer.
-- Split into modules; tests added.
+- トークンはサーバーごとに持つ。リレーはその SHA-256 だけを保存する(`SERVERS`)。サーバーが登録できるのは自分のアドレスだけ。リレーが送る先は `SERVERS` にあるアドレスだけ(以前は、共通のトークンを持つ者が書いた任意のアドレスを呼び出していた)。リダイレクトはたどらず、時間制限を付けた。
+- リレーが送る内容に、署名を付けた(Ed25519。署名する文には、サーバーのアドレスと時刻を入れる)。サーバーが持つのは公開鍵だけ。
+- サーバーのファイル一覧を整える。`parent`、`name`、`size` だけを残し、並べ替える。サーバーが他のサーバーのページに、自分のリンクを差し込めなくなった。
+- 修正: `?first=false` が `first` として数えられていた。不正な本文が 500 になっていた(いまは 400/413)。誤ったトークンが 400 になっていた(いまは 401)。サーバーの一覧が変わらないとき、`DELETE` がそのサーバーのファイルを消さなかった。ペイロード全体がログに書かれていた。
+- 通知は、1 件ずつではなく同時に送り、応答を返したあとに行う。
+- モジュールに分け、テストを追加した。
