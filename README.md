@@ -1,5 +1,7 @@
 # seamless-fs-relay
 
+[English](README.en.md) | 日本語
+
 [seamless-fs](https://github.com/NaeCqde/seamless-fs)(`sfs`)のサーバー同士をつなぐ Cloudflare Worker。
 
 - トークンはサーバーごと。リレーにはそのSHA-256だけを置く。
